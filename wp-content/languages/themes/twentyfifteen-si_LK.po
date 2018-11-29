@@ -1,0 +1,298 @@
+# Translation of Themes - Twenty Fifteen in Sinhala
+# This file is distributed under the same license as the Themes - Twenty Fifteen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-08-18 16:52:12+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: si_LK\n"
+"Project-Id-Version: Themes - Twenty Fifteen\n"
+
+#. Description of the plugin/theme
+msgid "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
+msgstr "අපගේ 2015 සාමාන්‍ය තේමාව පිරිසිදු, බ්ලොග්-ඉලක්ක කරගත්, පැහැදිලි බව සඳහා නිර්මිතය. දෙදහස් පහළොවෙහි සරල, ඍජු අක්ෂර ක්‍රමය විවිධ තිර ප්‍රමාණ වල කියවීමට ද, බහු භාෂා සඳහා ද ගැලපේ. අප එය නිර්මාණය කළේ ප්‍රථම-ජංගම ලඟාවීමක් ඇසුරෙන්, ඔබේ අමුත්තන් ස්මාට්ෆෝනයකින්, ටැබ්ලට්, ලැප්ටොප් හෝ ඩෙස්ක්ටොප් පරිගණයකින්  ආදී කුමකින් පිවිසුණත්, ඔබේ අන්තර්ගතයට ප්‍රධාන අවධානය ලැබෙන ලෙසය. "
+
+#. Theme Name of the plugin/theme
+msgid "Twenty Fifteen"
+msgstr "දෙදහස් පහළොව"
+
+#. translators: %s: post title
+#: inc/template-tags.php:130
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "<span class=\"screen-reader-text\">%s  සඳහා</span> ප්‍රතිචාරයක් තබා යන්න."
+
+#: single.php:39
+msgid "Previous post:"
+msgstr "පූර්ව ලිපිය:"
+
+#: single.php:38
+msgid "Previous"
+msgstr "පෙර"
+
+#: single.php:36
+msgid "Next post:"
+msgstr "ඊළඟ ලිපිය:"
+
+#: single.php:35
+msgid "Next"
+msgstr "ඊලග"
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "%s සඳහා සෙවුම් ප්‍රතිඵල"
+
+#: inc/template-tags.php:120
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr "සම්පූර්ණ ප්‍රමාණය"
+
+#: inc/template-tags.php:108
+msgctxt "Used before tag names."
+msgid "Tags"
+msgstr "ටැග"
+
+#: inc/template-tags.php:99
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr "ප්‍රවර්ග"
+
+#: inc/template-tags.php:95 inc/template-tags.php:104
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:89
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr "කර්තෘ"
+
+#: inc/template-tags.php:79
+msgctxt "Used before publish date."
+msgid "Posted on"
+msgstr "පළ කළේ"
+
+#: inc/template-tags.php:56
+msgctxt "Used before post format."
+msgid "Format"
+msgstr "ආකෘතිය"
+
+#: inc/template-tags.php:49
+msgid "Featured"
+msgstr "නිළලත්"
+
+#: inc/template-tags.php:30
+msgid "Newer Comments"
+msgstr "නැවුම් ප්‍රතිචාර"
+
+#: inc/template-tags.php:26
+msgid "Older Comments"
+msgstr "පැරණි ප්‍රතිචාර"
+
+#: inc/template-tags.php:23
+msgid "Comment navigation"
+msgstr "ප්‍රතිචාර යාත්‍රණය"
+
+#: inc/customizer.php:226
+msgid "Blue"
+msgstr "නිල්"
+
+#: inc/customizer.php:215
+msgid "Purple"
+msgstr "දම්"
+
+#: inc/customizer.php:204
+msgid "Pink"
+msgstr "රෝස"
+
+#: inc/customizer.php:193
+msgid "Yellow"
+msgstr "කහ"
+
+#: inc/customizer.php:182
+msgid "Dark"
+msgstr "අඳුරු"
+
+#: inc/customizer.php:171
+msgid "Default"
+msgstr "පෙරනිමි"
+
+#: inc/customizer.php:93
+msgid "Header and Sidebar Background Color"
+msgstr "ශීර්ෂක සහ පැතිදාර පසුබිම් වර්ණය"
+
+#: inc/customizer.php:72 inc/customizer.php:94 inc/customizer.php:101
+msgid "Applied to the header on small screens and the sidebar on wide screens."
+msgstr "කුඩා තිර වල ශීර්ෂකයට ද, පුළුල් තිර වල පැතිදාරයට ද යෙදුවා."
+
+#: inc/customizer.php:71
+msgid "Header and Sidebar Text Color"
+msgstr "ශීර්ෂක සහ පැතිදාර පෙළ වර්ණය"
+
+#: inc/customizer.php:51
+msgid "Base Color Scheme"
+msgstr "පදනම් වර්ණ පටිපාටිය"
+
+#: inc/back-compat.php:37 inc/back-compat.php:48 inc/back-compat.php:62
+msgid "Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
+msgstr "දෙදහස් පහළොව සඳහා යටත් පිරිසෙයින් WordPressහි 4.1වන සංස්කරණය වත් අවශ්‍යයි. ඔබ ධාවනය කරන්නේ %s වන සංස්කරණයයි. කරුණාකර උත්ශ්‍රේණි කර නැවත උත්සාහ කරන්න."
+
+#: image.php:88
+msgctxt "Parent post link"
+msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
+msgstr "<span class=\"meta-nav\">පළ වූයේ</span><span class=\"post-title\">%title</span> යටතේ ය."
+
+#: image.php:25
+msgid "Next Image"
+msgstr "ඊළඟ පින්තූරය"
+
+#: image.php:25
+msgid "Previous Image"
+msgstr "පෙර පින්තූරය"
+
+#: header.php:49
+msgid "Menu and widgets"
+msgstr "මෙනුව සහ විජට්ටු"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr "අන්තර්ගතය වෙත පනින්න"
+
+#: functions.php:312
+msgid "collapse child menu"
+msgstr "ළමා මෙනුව හකුලන්න"
+
+#: functions.php:311
+msgid "expand child menu"
+msgstr "ළමා මෙනුව විහිදුවන්න"
+
+#. Translators: To add an additional character subset specific to your
+#. language, translate this to 'greek', 'cyrillic', 'devanagari' or
+#. 'vietnamese'. Do not translate into your own language.
+#: functions.php:238
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr "no-subset"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Inconsolata, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:230
+msgctxt "Inconsolata font: on or off"
+msgid "on"
+msgstr "off"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Noto Serif, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:222
+msgctxt "Noto Serif font: on or off"
+msgid "on"
+msgstr "off"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Noto Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:214
+msgctxt "Noto Sans font: on or off"
+msgid "on"
+msgstr "off"
+
+#: functions.php:187
+msgid "Add widgets here to appear in your sidebar."
+msgstr "මෙතනට එක්කරන විජට්ටු පැතිදාරයේ දර්ශනය වේ."
+
+#: functions.php:185
+msgid "Widget Area"
+msgstr "විජට්ටු ප්‍රදේශය"
+
+#: functions.php:87
+msgid "Social Links Menu"
+msgstr "සමාජ සබැඳි මෙනුව"
+
+#: functions.php:86
+msgid "Primary Menu"
+msgstr "ප්‍රාථමික මෙනුව"
+
+#: footer.php:31
+msgid "Proudly powered by %s"
+msgstr "%s මඟින් සාඩම්බරයෙන් බලගැන්වේ"
+
+#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 2.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: footer.php:30
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: content-none.php:31
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "ඔබ සොයන දේ අපට සොයාගත නොහැකි හැඩයි. සෙවුමක් කිරීම ඇතැම්විට උදව් වේවි."
+
+#: content-none.php:26
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "කණගාටුයි, නමුත් ඔබ සෙවූ පද වලට සමාන කිසිවක් හමුවූයේ නැහැ. කරුණාකර වෙනස් මූලපද යොදා නැවත උත්සාහ කරන්න."
+
+#: content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "ඔබේ පළමු ලිපිය පළකිරීමට සූදානම් ද? <a href=\"%1$s\">මෙතනින් අරඹන්න</a>."
+
+#: content-none.php:15
+msgid "Nothing Found"
+msgstr "කිසිවක් සමු නොවුණි"
+
+#: content-link.php:60 content-page.php:37 content-search.php:28
+#: content-search.php:33 content.php:61 image.php:74
+msgid "Edit"
+msgstr "සංස්කරණය"
+
+#: content-link.php:39 content-page.php:26 content.php:41 image.php:61
+msgid "Pages:"
+msgstr "පිටු:"
+
+#. translators: %s: Name of current post
+#: content-link.php:32 content.php:34 inc/template-tags.php:249
+msgid "Continue reading %s"
+msgstr "දිගටම කියවන්න %s"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "ප්‍රතිචාර වසා ඇත."
+
+#: author-bio.php:34
+msgid "View all posts by %s"
+msgstr "%sගේ සියලු ලිපි පෙන්වන්න"
+
+#: author-bio.php:12
+msgid "Published by"
+msgstr "පළකළේ"
+
+#: archive.php:53 content-link.php:43 content-page.php:30 content.php:45
+#: image.php:65 index.php:50 search.php:43
+msgid "Page"
+msgstr "පිටුව"
+
+#: archive.php:52 index.php:49 search.php:42
+msgid "Next page"
+msgstr "ඉදිරි පිටුවට"
+
+#: archive.php:51 index.php:48 search.php:41
+msgid "Previous page"
+msgstr "පෙර පිටුවට"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "පෙනෙන්නට තිබෙන්නේ මෙහි කිසිවක් නොමැති බවයි. සෙවුමක් උත්සාහ කරමුද?"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "අපොයි! එම පිටුව සොයාගත නොහැක."
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "WordPress කණ්ඩායම"
+
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/twentyfifteen/"
+msgstr "https://wordpress.org/themes/twentyfifteen/"
