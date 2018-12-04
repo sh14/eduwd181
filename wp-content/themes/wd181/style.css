@@ -3,15 +3,75 @@ Theme Name: WD 181
 Author: Isaenko Alexei
 Author URI: https://wordpress.org/
 Description: :)
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wd181
 */
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #ff574d;
+}
+a:hover {
+  color: #e44d44;
+}
 .site-header {
   background-color: #eee;
 }
 .site-footer {
   background-color: #eee;
+}
+.header {
+  width: 100%;
+  display: table;
+  background-color: #eee;
+}
+.header__brand,
+.header__menu {
+  display: table-cell;
+}
+.header__brand {
+  width: 100px;
+}
+.header__logo {
+  white-space: nowrap;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+}
+.page:before,
+.page:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+.page__content-area,
+.page__sidebar {
+  float: left;
+  width: 75%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.page__sidebar {
+  width: 25%;
+}
+.post {
+  margin-bottom: 20px;
+}
+.post__thumb {
+  display: block;
+  text-decoration: none;
+}
+.post__thumb img {
+  max-width: 500px;
+  height: auto;
+}
+.post__title {
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -8,12 +8,24 @@
 
 <body <?php body_class(); ?>>
 
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-<?php
-$description = get_bloginfo( 'description', 'display' );
-if ( $description ) : ?>
-	<p class="site-description"><?php echo $description; ?></p>
-<?php endif; ?>
+<div class="header">
+	<div class="header__brand">
+		<a class="header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"
+		   rel="home"><?php bloginfo( 'name' ); ?></a>
+		<?php
+		$description = get_bloginfo( 'description', 'display' );
+		if ( $description ) {
+			?>
+			<div class="header__description">
+				<?php echo $description; ?>
+			</div>
+			<?php
+		}
+		?>
+	</div>
+	<div class="header__menu"></div>
+</div>
+
 
 <div id="content" class="site-content">
