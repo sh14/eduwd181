@@ -19,6 +19,11 @@ add_action( 'wp_enqueue_scripts', 'enque_my_styles' );
 
 
 function theme_setup(){
+	register_nav_menus( array(
+		'top'    => __( 'Верхнее меню', 'wd181' ),
+	) );
+
+
 	add_theme_support( 'post-thumbnails' );
 
 }

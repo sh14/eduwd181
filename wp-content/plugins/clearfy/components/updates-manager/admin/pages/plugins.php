@@ -357,7 +357,9 @@
 				<table class="wp-list-table widefat autoupdate striped plugins wp-list-table__plugins">
 					<thead>
 					<tr>
-						<th id='cb' class='manage-column column-cb check-column'>&nbsp;</th>
+						<th id='cb' class='manage-column column-cb check-column'>
+                            <input class="wbcr_um_select_all" type="checkbox">
+                        </th>
 						<th id='name' class='manage-column column-name column-primary'>
 							<strong><?php _e('Plugin', 'webcraftic-updates-manager'); ?></strong></th>
 						<th id="disable_updates">
@@ -407,15 +409,13 @@
 									$is_auto_updates = false;
 								}
 								if( (isset($this->plugins_update_filters['disable_updates']) && isset($this->plugins_update_filters['disable_updates'][$actual_slug])) ) {
-									$class = 'inactive';
 									$is_disable_updates = true;
 								}
 							}
 
-							if( $this->is_disable_updates ) {
-								$class = 'inactive row-global-disabled';
-								$is_disable_updates = true;
-							}
+                            if( $this->is_disable_updates ) {
+                                $is_disable_updates = true;
+                            }
 
 							if( !empty($this->plugins_update_filters) ) {
 								if( isset($this->plugins_update_filters['disable_translation_updates']) && isset($this->plugins_update_filters['disable_translation_updates'][$actual_slug]) ) {
@@ -426,6 +426,15 @@
 							if( isset($this->plugins_update_filters['disable_display']) && isset($this->plugins_update_filters['disable_display'][$actual_slug]) ) {
 								$is_disable_display = true;
 							}
+                            if($is_disable_display or $is_disable_updates){
+                                $class = 'inactive';
+                            }
+
+                            if( $this->is_disable_updates ) {
+                                $class = 'inactive row-global-disabled';
+                            }
+
+
 							?>
 							<tr id="post-<?= esc_attr($slug_hash) ?>" class="<?= $class ?>">
 								<td scope="row" class="check-column">
@@ -442,9 +451,12 @@
 								</td>
 								<!-- отключить все обновления -->
 								<td class="column-flags">
-									<div class="factory-checkbox factory-from-control-checkbox factory-buttons-way btn-group">
+									<div class="factory-checkbox factory-from-control-checkbox factory-buttons-way btn-group <?= 'group-all-' . $slug_hash; ?>">
 										<?php
 											$disabled = $this->is_disable_updates;
+											if($is_disable_display){
+                                                $disabled = true;
+                                            }
 											$checked = false;
 											if( $is_disable_updates ) {
 												$checked = true;
@@ -462,41 +474,35 @@
 								</td>
 								<!-- отключить авто-обновления -->
 								<td class="column-flags">
-									<div class="factory-checkbox factory-from-control-checkbox factory-buttons-way btn-group <?= 'group-' . $slug_hash; ?> <?= (!$this->is_auto_updates) ? 'global-disabled' : ''; ?>">
+									<div class="factory-checkbox factory-from-control-checkbox factory-buttons-way btn-group <?= 'group-' . $slug_hash; ?> <?= 'group-all-' . $slug_hash; ?> <?= (!$this->is_auto_updates) ? 'global-disabled' : ''; ?> ">
 										<?php
 											$disabled = false;
-											if( !$this->is_auto_updates or $is_disable_updates ) {
+											if( !$this->is_auto_updates or $is_disable_updates or $is_disable_display) {
 												$disabled = true;
 											}
-											$checked = false;
-											if( !$is_auto_updates ) {
-												$checked = true;
-											}
+											$checked = $is_auto_updates;
 
 										?>
-										<button type="button" class="btn btn-default btn-small btn-sm factory-on <?= ($checked ? 'active' : ''); ?>"  <?= ($disabled) ? 'disabled' : ''; ?>><?php _e('On', 'webcraftic-updates-manager'); ?></button>
-										<button type="button" class="btn btn-default btn-small btn-sm factory-off <?= (!$checked ? 'active' : ''); ?>" data-value="0"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('Off', 'webcraftic-updates-manager'); ?></button>
+										<button type="button" class="btn btn-default btn-small btn-sm factory-on <?= ($checked ? 'active' : ''); ?>" <?= ($disabled) ? 'disabled' : ''; ?>><?php _e('On', 'webcraftic-updates-manager'); ?></button>
+										<button type="button" class="btn btn-default btn-small btn-sm factory-off <?= (!$checked ? 'active' : ''); ?>" <?= ($disabled ? 'disabled' : ''); ?>><?php _e('Off', 'webcraftic-updates-manager'); ?></button>
 										<input type="checkbox" style="display: none" id="wbcr_updates_manager_disable_auto_updates" class="factory-result factory-ajax-checkbox"
-										       data-action="AutoUpdates" data-plugin-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
+										       data-action="AutoUpdates" data-inverse="1" data-plugin-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
 									</div>
 								</td>
 								<!-- отключить обновления переводов -->
 								<td class="column-flags <?= (!$is_premium) ? "wbcr-upm-column-premium" : ""; ?>">
-									<div class="factory-checkbox factory-from-control-checkbox factory-buttons-way btn-group <?= 'group-' . $slug_hash; ?>  <?= (!$is_premium or $this->is_disable_translation_updates ? 'global-disabled' : ''); ?>">
+									<div class="factory-checkbox factory-from-control-checkbox factory-buttons-way btn-group <?= 'group-' . $slug_hash; ?>  <?= 'group-all-' . $slug_hash; ?>  <?= (!$is_premium or $this->is_disable_translation_updates ? 'global-disabled' : ''); ?>">
 										<?php
 											$disabled = false;
-											if( !$is_premium or $is_disable_updates or $this->is_disable_translation_updates ) {
+											if( !$is_premium or $is_disable_updates or $this->is_disable_translation_updates  or $is_disable_display) {
 												$disabled = true;
 											}
-											$checked = false;
-											if( $is_disable_translation_update ) {
-												$checked = true;
-											}
+											$checked = !$is_disable_translation_update;
 										?>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-on <?= ($checked) ? 'active' : ''; ?>"  <?= ($disabled) ? 'disabled' : ''; ?>><?php _e('On', 'webcraftic-updates-manager'); ?></button>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-off <?= (!$checked) ? 'active' : ''; ?>" data-value="0"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('Off', 'webcraftic-updates-manager'); ?></button>
 										<input type="checkbox" style="display: none" id="wbcr_updates_manager_disable_translation_updates" class="factory-result factory-ajax-checkbox"
-										       data-action="TranslationUpdates" data-plugin-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
+										       data-action="TranslationUpdates"  data-inverse="1"  data-plugin-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
 									</div>
 								</td>
 								<!-- скрыть плагин -->
@@ -512,7 +518,7 @@
 										<button type="button" class="btn btn-default btn-small btn-sm factory-on <?= ($checked ? 'active' : ''); ?>"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('On', 'webcraftic-updates-manager'); ?></button>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-off <?= (!$checked ? 'active' : ''); ?>" data-value="0"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('Off', 'webcraftic-updates-manager'); ?></button>
 										<input type="checkbox" style="display: none" id="wbcr_updates_manager_hide_item" class="factory-result factory-ajax-checkbox"
-										       data-action="Display" data-plugin-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
+                                               data-disable-group="<?= 'group-all-' . $slug_hash; ?>"  data-action="Display" data-plugin-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
 									</div>
 								</td>
 							</tr>

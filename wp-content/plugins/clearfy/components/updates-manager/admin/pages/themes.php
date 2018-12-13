@@ -331,7 +331,9 @@
 				<table class="wp-list-table wbcr-upm-list-table-pro widefat autoupdate striped plugins <?= (!$is_premium ? "wbcr-upm-column-premium" : ""); ?>">
 					<thead>
 					<tr>
-						<th id='cb' class='manage-column column-cb check-column'>&nbsp;</th>
+						<th id='cb' class='manage-column column-cb check-column'>
+                            <input class="wbcr_um_select_all" type="checkbox">
+                        </th>
 						<th id='name' class='manage-column column-name column-primary'>
 							<strong><?php _e('Theme', 'webcraftic-updates-manager'); ?></strong></th>
 						<th id="disable_updates">
@@ -392,7 +394,7 @@
 							<tr id="post-<?= esc_attr($slug_hash) ?>" class="<?= $class ?>">
 								<td scope="row" class="check-column">
 									<label class="screen-reader-text" for="cb-select-<?= esc_attr($slug_hash) ?>"><?php _e('Select', 'webcraftic-updates-manager') ?><?= esc_html($name) ?></label>
-									<input id="cb-select-<?= esc_attr($slug_hash) ?>" type="checkbox" name="theme_slugs[]" value="<?= esc_attr($actual_slug) ?>" <?= (!$is_premium ? 'disabled' : ''); ?>>
+									<input id="cb-select-<?= esc_attr($slug_hash) ?>" class="wbcr_um_select_item" type="checkbox" name="theme_slugs[]" value="<?= esc_attr($actual_slug) ?>" <?= (!$is_premium ? 'disabled' : ''); ?>>
 									<label></label>
 
 									<div class="locked-indicator"></div>
@@ -430,14 +432,14 @@
 												$disabled = true;
 											}
 											$checked = false;
-											if( !$is_auto_updates ) {
+											if( $is_auto_updates ) {
 												$checked = true;
 											}
 										?>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-on <?= ($checked ? 'active' : ''); ?>"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('On', 'webcraftic-updates-manager'); ?></button>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-off <?= (!$checked) ? 'active' : ''; ?>" data-value="0"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('Off', 'webcraftic-updates-manager'); ?></button>
 										<input type="checkbox" style="display: none" id="wbcr_updates_manager_disable_auto_updates" class="factory-result factory-ajax-checkbox"
-										       data-action="AutoUpdates" data-theme-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
+										       data-action="AutoUpdates"  data-inverse="1" data-theme-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
 									</div>
 								</td>
 								<!-- отключить обновления переводов -->
@@ -449,14 +451,14 @@
 												$disabled = true;
 											}
 											$checked = false;
-											if( $is_disable_translation_update ) {
+											if( !$is_disable_translation_update ) {
 												$checked = true;
 											}
 										?>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-on <?= ($checked ? 'active' : ''); ?>"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('On', 'webcraftic-updates-manager'); ?></button>
 										<button type="button" class="btn btn-default btn-small btn-sm factory-off <?= (!$checked) ? 'active' : ''; ?>" data-value="0"  <?= ($disabled ? 'disabled' : ''); ?>><?php _e('Off', 'webcraftic-updates-manager'); ?></button>
 										<input type="checkbox" style="display: none" id="wbcr_updates_manager_disable_translation_updates" class="factory-result factory-ajax-checkbox"
-										       data-action="TranslationUpdates" data-theme-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
+										       data-action="TranslationUpdates"  data-inverse="1"  data-theme-slug="<?= $actual_slug ?>" value="<?= (int)$checked ?>" <?= ($checked ? 'checked' : ''); ?>  <?= ($disabled ? 'disabled' : ''); ?>>
 									</div>
 								</td>
 							</tr>

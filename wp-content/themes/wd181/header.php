@@ -24,7 +24,13 @@
 		}
 		?>
 	</div>
-	<div class="header__menu"></div>
+	<div class="header__menu">
+		<?php
+		wp_nav_menu(array(
+				'theme_location'=>'top',
+		));
+		?>
+	</div>
 </div>
 
 

@@ -141,13 +141,15 @@
   right: auto;
   z-index: 11;
 }
+#WBCR .wp-list-table.autoupdate .check-column {
+  padding: 10px 9px;
+}
 .factory-checkbox-disabled input,
 .factory-checkbox-disabled button {
   pointer-events: none;
   cursor: not-allowed;
-  opacity: 0.65;
+  opacity: .65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/*# sourceMappingURL=general.css.map */
