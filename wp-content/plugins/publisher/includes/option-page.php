@@ -14,19 +14,22 @@ function register_settings() {
 	register_setting( __NAMESPACE__, __NAMESPACE__ . 'editor_page' );
 }
 
+
+
 /**
  * Создание меню настроек в админке
  */
 function create_menu() {
 
 	// добавление нового пункта меню верхнего уровня
-	add_menu_page(
+	//add_menu_page( // добавление пункта меню в корень
+	add_options_page( // добавление пункта меню в раздел Настройки
 		__( 'Публикатор', 'publisher' ),
 		__( 'Публикатор', 'publisher' ),
 		'administrator',
 		__FILE__,
-		__NAMESPACE__ . '\settings_page',
-		'dashicons-admin-page'
+		__NAMESPACE__ . '\settings_page'
+	//'dashicons-admin-page' // иконка для "основного" пункта меню
 	);
 
 	// вызов функции регистрации настроек
@@ -57,7 +60,7 @@ function settings_page() {
 								'depth'    => 1,
 								'selected' => esc_attr( get_option( __NAMESPACE__ . 'editor_page' ) ),
 								'echo'     => 1,
-								'name'     => __NAMESPACE__.'editor_page',
+								'name'     => __NAMESPACE__ . 'editor_page',
 							)
 						);
 						?>
@@ -71,5 +74,11 @@ function settings_page() {
 		</form>
 	</div>
 <?php }
+
+// при использовании функций другого плагина или темы, необходимо делать проверку на существоание функции6 чтобы сайт не выдавпал в фатальную ошибку
+if(function_exists('')){
+	// ...
+}
+
 
 // eof
