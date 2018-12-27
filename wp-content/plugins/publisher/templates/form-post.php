@@ -66,7 +66,7 @@ foreach ( $post_status as $i => $status ) {
 
 ?>
 
-<form action="" class="form" method="post">
+<form action="" class="form js-publisher" method="post">
 	<div class="form__group">
 		<div class="form__label"><?php _e( 'Заголовок', 'publisher' ); ?></div>
 		<?php wp_dropdown_categories( array(
@@ -128,7 +128,8 @@ foreach ( $post_status as $i => $status ) {
 
 	<button type="submit" class="form__button"><?php _e( 'Сохранить', 'publisher' ); ?></button>
 	<input type="hidden" name="_p[ID]" value="<?php echo $post_id; ?>">
-	<input type="hidden" name="action" value="post_save">
+	<input type="hidden" name="action" value="publisher_ajax_post_save">
+	<input type="hidden" name="js_disabled" value="1">
 	<?php wp_nonce_field( 'post_save', 'form-post' ); ?>
 
 	<?php
@@ -139,7 +140,7 @@ foreach ( $post_status as $i => $status ) {
 		<?php
 	}
 	?>
-	<div class="form form_info">
+	<div class="form form_info js-form-info">
 		<?php
 		if ( ! empty( $_GET['event'] ) && 'update' == $_GET['event'] ) {
 			_e( 'Публикация сохранена', 'publisher' );
